@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="jumbotron"> 
+    <h1 class="display-">To-Do app</h1> 
+    <p class="lead">To-do App built with Django.</p> 
+</div> 
+{% else %}
+    <p>You are not logged in!</p>
+    <a href="{% url 'login' %}">Log In</a>
+    |
+    <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+
+{% endblock content %}

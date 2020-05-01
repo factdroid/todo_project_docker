@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # local
     'users.apps.UsersConfig',
+    'pages.apps.PagesConfig',
+
+    # 3rd party
+    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'todo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,3 +128,10 @@ STATIC_URL = '/static/'
 
 # setting the cutom user model
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# Which page Url redirects to after Login or Logout
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+# Setting for Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap'
