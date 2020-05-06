@@ -13,4 +13,4 @@ class Task(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('tasklistcreate', args=[str(self.id)])
+        return reverse('tasklistcreate')
